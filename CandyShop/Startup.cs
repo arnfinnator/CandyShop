@@ -1,3 +1,4 @@
+using CandyShop.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -16,6 +17,10 @@ namespace CandyShop
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
+
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ICandyRepository, CandyRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -26,7 +31,7 @@ namespace CandyShop
                 app.UseDeveloperExceptionPage();
             }
 
-            /***IApplicationBuilder Middleware Setup****/
+            /***Middleware Setup****/
 
             //NOTE: Tells AppBuilder to use HTTPS redirection.
             app.UseHttpsRedirection();
