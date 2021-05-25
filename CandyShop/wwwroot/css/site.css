@@ -1,15 +1,19 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+/**{
+    border:2px solid red;
+}*/
+
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     /*background-image: url('/images/pattern.png');*/
-    background-repeat: repeat;
+    /*background-repeat: repeat;*/
     font-family: 'Source Sans Pro', sans-serif;
 }
 
 .card-img-top {
-    width: 100%;
+    width: auto;
     height: 13vw;
     object-fit: cover;
 }
