@@ -1,0 +1,16 @@
+﻿@model Candy 
+
+<div class="col-sm" @*style="border:2px solid red"*@>
+    <div class="card">
+        <img class="card-img-top" src="@Model.ImageThumbnailUrl" alt="Image for CandyShop" style="border:2px solid black;" />
+        <div class="card-body">
+            <div>
+                <h3>@Model.Price.ToString("c")</h3>
+                <a href="#" class="btn btn-success w-100">Add to Cart</a>
+            </div>
+            @*asp-route-"id", "Id" is based on what the argument of the action is called, CandyController - Details ( int "id" )*@
+            <h3 class="text-center"><a asp-controller="Candy" asp-action="Details" asp-route-id="@Model.CandyId">@Model.Name</a></h3>
+            <p class="text-left">@Model.Description</p>
+        </div>
+    </div>
+</div>

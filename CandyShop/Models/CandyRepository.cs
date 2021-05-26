@@ -23,7 +23,7 @@ namespace CandyShop.Models
             }
         }
 
-        public IEnumerable<Candy> GetCanyOnSale
+        public IEnumerable<Candy> GetCandyOnSale
         {
             get
             {

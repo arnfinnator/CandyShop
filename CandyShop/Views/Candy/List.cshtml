@@ -6,32 +6,6 @@
 <div class="row">
     @foreach (var candy in Model.Candies)
     {
-        @*<div class="col-sm-4 col-lg-4 col-md-4">
-                <div class="thumbnail">
-                    <img src="@candy.ImageThumbnailUrl" alt="Image for CandyShop" />
-                    <div class="caption">
-                        <h3 class="">@candy.Price.ToString("c")</h3>
-                        <h3>@candy.Name</h3>
-                        <p>@candy.Description</p>
-                    </div>
-                </div>
-            </div>*@
-    <div class="col-md" @*style="border:2px solid red"*@>
-
-        @*class= "card h-50" style="width: 16rem;*@
-        <div class="card" overflow:hidden">
-            <img class="card-img-top" src="@candy.ImageThumbnailUrl" alt="Image for CandyShop" style="border:2px solid black;" />
-            <div class="card-body">
-                <div>
-                    <h3>@candy.Price.ToString("c")</h3>
-                    <a href="#" class="btn btn-success w-100">Add to Cart</a>
-                </div>
-                <h3 class="text-center">@candy.Name</h3>
-                <p class="text-left">@candy.Description</p>
-            </div>
-        </div>
-    </div>
-
+        <partial name="_CandyCard" model="candy" />
     }
-
 </div>

@@ -20,15 +20,49 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3">
-                <p class="lead">
-                    <a href="#"><img class="img-fluid" src="~/Images/candyshoplogo.png" alt="CandyShop Logo" /></a>
-                </p>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">CandyShop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Candy
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" asp-controller="Candy" asp-action="List">All Candy</a>
+                            <a class="dropdown-item" asp-controller="Candy" asp-action="List">Another action</a>
+                            <a class="dropdown-item" asp-controller="Candy" asp-action="List">Something else here</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Color Scheme
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">dark</a>
+                            <a class="dropdown-item" href="#">light</a>
+                            <a class="dropdown-item" href="#">candy</a>
+                        </div>
+                    </li>
+
+                </ul>
             </div>
-        </div>
+        </nav>
         <div class="row d-flex justify-content-center text-center">
-            <div class="col-md-12">
+            <div class="col-md-12 ">
                 @RenderBody()
             </div>
         </div>
