@@ -5,8 +5,18 @@
 <div class="thumbnail">
     <img alt="@Model.Name" src="@Model.ImageUrl" />
     <div class="caption-full">
-        <h3 class="float-right">@Model.Price</h3>
-        <h3><a href="#">@Model.Name</a></h3>
+        <h3 class="float-right">@Model.Price.ToString("c")</h3>
+        <h3 class="text-center">
+            <a href="#">@Model.Name</a>
+        </h3>
+        <a class="btn btn-success text-center"
+           asp-controller="ShoppingCart"
+           asp-action="AddToShoppingCart"
+           asp-route-candyId="@Model.CandyId">
+            Add to Cart
+        </a>
+
         <p>@Model.Description</p>
+
     </div>
 </div>
