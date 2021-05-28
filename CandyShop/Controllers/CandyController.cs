@@ -21,15 +21,35 @@ namespace CandyShop.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        public IActionResult List()
+        public ViewResult List(string category)
         {
-            //ViewBag.CurrentCategory = "Bestsellers";
-            //return View(_candyRepository.GetAllCandy);
+            IEnumerable<Candy> candies;
+            string currentCategory;
 
-            var candyListViewModel = new CandyListViewModel();
-            candyListViewModel.Candies = _candyRepository.GetAllCandy;
-            candyListViewModel.CurrentCategory = "Bestsellers";
-            return View(candyListViewModel);
+            // null or empty string:
+            if (string.IsNullOrEmpty(category))
+            {
+                //fills the ienumerable of candy 'candies' with the result of getallcandy,
+                //from the repository, ordered by candy id
+                candies = _candyRepository.GetAllCandy.OrderBy(c => c.CandyId);
+                //Since all candies are selected, category set to All Candy
+                currentCategory = "All Candy";
+            }
+            //otherwise, if string supplied is not null or empty. 
+            else
+            {
+                //Look for match of supplied string (category) in repository
+                candies = _candyRepository.GetAllCandy.Where(c => c.Category.CategoryName == category);
+                //Sets currentCategory to the first element from the getallcategories method where categoryName and category matches,
+                //but also something something
+                currentCategory = _categoryRepository.GetAllCategories.FirstOrDefault(c => c.CategoryName == category)?.CategoryName;
+            }
+
+            return View(new CandyListViewModel
+            {
+                Candies = candies,
+                CurrentCategory = currentCategory
+            });
         }
 
         public IActionResult Details(int id)
