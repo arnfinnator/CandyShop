@@ -1,0 +1,49 @@
+﻿
+Validate data on the model
+
+
+Check:
+Data user sends in == expected by model
+
+-----------------------------------
+
+
+Norm:  
+Validation done at client side, generally using JS
+
+This course: 
+Because of focus on .NET & C#, 
+validation will be done server side.
+
+
+------- Change later? --------
+
+
+
+
+Notes:
+
+1 ) Add attributes, ( <-- for this course )
+ex
+using ms.aspnet.mvc.ModelBinding
+[BindNever]
+
+using sys.componentmodel.dataannotations
+[Display( x = "",  y = "")]  
+
+2 ) constraints,
+
+3 ) regular expressions
+
+... others?
+
+-------------------------
+
+Idtentity, Authentication, Authorization
+
+
+
+
+-------------------
+
+Razor pages vs razor views?

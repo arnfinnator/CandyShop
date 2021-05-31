@@ -2,6 +2,7 @@ using CandyShop.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,17 +30,30 @@ namespace CandyShop
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            /* NOTE:
+            Transient objects are always different; a new instance is provided to every controller and every service.
+
+            Scoped objects are the same within a request, but different across different requests.
+
+            Singleton objects are the same for every object and every request.
+            */
+
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
+
 
             services.AddControllersWithViews();
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ICandyRepository, CandyRepository>();
-
             services.AddScoped<ShoppingCart>(sc => ShoppingCart.GetCart(sc));
+            services.AddScoped<IOrderRepository, OrderRepository>();
+
 
             services.AddHttpContextAccessor();
             services.AddSession();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,11 +72,14 @@ namespace CandyShop
             //NOTE: Tells AppBuilder to allow use of static files such as Images, CSS, JS, etc...
             app.UseStaticFiles();
 
-            // Call UseSession before routing.
+            // **Call UseSession before routing.
             app.UseSession();
 
 
             app.UseRouting();
+
+            // Important: Add after Routing
+            app.UseAuthentication();
 
             //NOTE: Lets MVC respond to requests
             // Controller route is introduced to url here,
@@ -73,6 +90,8 @@ namespace CandyShop
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}"
                     );
+
+                endpoints.MapRazorPages();
             });
         }
     }

@@ -4,14 +4,16 @@ using CandyShop.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CandyShop.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210531102954_AddingAttributes")]
+    partial class AddingAttributes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,14 +74,14 @@ namespace CandyShop.Migrations
                         new
                         {
                             CandyId = 2,
-                            CategoryId = 3,
+                            CategoryId = 2,
                             Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\n            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\n            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\n            optio, eaque rerum!Provident similique accusantium nemo autem.",
                             ImageThumbnailUrl = "\\Images\\thumbnails\\fruitCandy-small.jpg",
                             ImageUrl = "\\Images\\FruitCandy.jpg",
-                            IsInStock = false,
+                            IsInStock = true,
                             IsOnSale = true,
-                            Name = "Fun Strawberry Candy",
-                            Price = 3.95m
+                            Name = "Pink Gummy Candy",
+                            Price = 5.95m
                         },
                         new
                         {
@@ -88,34 +90,34 @@ namespace CandyShop.Migrations
                             Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\n            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\n            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\n            optio, eaque rerum!Provident similique accusantium nemo autem.",
                             ImageThumbnailUrl = "\\Images\\thumbnails\\fruitCandy2-small.jpg",
                             ImageUrl = "\\Images\\FruitCandy2.jpg",
-                            IsInStock = true,
+                            IsInStock = false,
                             IsOnSale = true,
-                            Name = "Assorted Chocolate Candy",
+                            Name = "Fruit Ghost Candy",
                             Price = 5.95m
                         },
                         new
                         {
                             CandyId = 4,
-                            CategoryId = 1,
+                            CategoryId = 4,
                             Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\n            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\n            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\n            optio, eaque rerum!Provident similique accusantium nemo autem.",
                             ImageThumbnailUrl = "\\Images\\thumbnails\\fruitCandy3-small.jpg",
                             ImageUrl = "\\Images\\FruitCandy3.jpg",
                             IsInStock = true,
-                            IsOnSale = false,
-                            Name = "Pink Strawberry Candy",
-                            Price = 4.95m
+                            IsOnSale = true,
+                            Name = "Fruit Gummy Candy",
+                            Price = 3.95m
                         },
                         new
                         {
                             CandyId = 5,
-                            CategoryId = 4,
+                            CategoryId = 3,
                             Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\n            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\n            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\n            optio, eaque rerum!Provident similique accusantium nemo autem.",
                             ImageThumbnailUrl = "\\Images\\thumbnails\\chocolateCandy-small.jpg",
                             ImageUrl = "\\Images\\chocolateCandy.jpg",
-                            IsInStock = false,
-                            IsOnSale = false,
-                            Name = "Fun Chocolate Candy",
-                            Price = 3.95m
+                            IsInStock = true,
+                            IsOnSale = true,
+                            Name = "Delicious Gummy Candy",
+                            Price = 2.95m
                         },
                         new
                         {
@@ -126,80 +128,80 @@ namespace CandyShop.Migrations
                             ImageUrl = "\\Images\\chocolateCandy2.jpg",
                             IsInStock = false,
                             IsOnSale = true,
-                            Name = "Assorted Ghost Candy",
-                            Price = 4.95m
-                        },
-                        new
-                        {
-                            CandyId = 7,
-                            CategoryId = 1,
-                            Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\n            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\n            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\n            optio, eaque rerum!Provident similique accusantium nemo autem.",
-                            ImageThumbnailUrl = "\\Images\\thumbnails\\chocolateCandy3-small.jpg",
-                            ImageUrl = "\\Images\\chocolateCandy3.jpg",
-                            IsInStock = true,
-                            IsOnSale = true,
-                            Name = "Fun Cherry Candy",
-                            Price = 3.95m
-                        },
-                        new
-                        {
-                            CandyId = 8,
-                            CategoryId = 1,
-                            Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\n            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\n            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\n            optio, eaque rerum!Provident similique accusantium nemo autem.",
-                            ImageThumbnailUrl = "\\Images\\thumbnails\\fruitCandy-small.jpg",
-                            ImageUrl = "\\Images\\fruitCandy.jpg",
-                            IsInStock = true,
-                            IsOnSale = false,
-                            Name = "Delicious Gummy Candy",
-                            Price = 3.50m
-                        },
-                        new
-                        {
-                            CandyId = 9,
-                            CategoryId = 4,
-                            Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\n            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\n            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\n            optio, eaque rerum!Provident similique accusantium nemo autem.",
-                            ImageThumbnailUrl = "\\Images\\thumbnails\\fruitCandy2-small.jpg",
-                            ImageUrl = "\\Images\\fruitCandy2.jpg",
-                            IsInStock = true,
-                            IsOnSale = true,
                             Name = "Fun Gummy Candy",
                             Price = 2.95m
                         },
                         new
                         {
-                            CandyId = 10,
+                            CandyId = 7,
+                            CategoryId = 3,
+                            Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\n            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\n            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\n            optio, eaque rerum!Provident similique accusantium nemo autem.",
+                            ImageThumbnailUrl = "\\Images\\thumbnails\\chocolateCandy3-small.jpg",
+                            ImageUrl = "\\Images\\chocolateCandy3.jpg",
+                            IsInStock = false,
+                            IsOnSale = true,
+                            Name = "Fun Gummy Candy",
+                            Price = 3.50m
+                        },
+                        new
+                        {
+                            CandyId = 8,
+                            CategoryId = 4,
+                            Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\n            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\n            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\n            optio, eaque rerum!Provident similique accusantium nemo autem.",
+                            ImageThumbnailUrl = "\\Images\\thumbnails\\fruitCandy-small.jpg",
+                            ImageUrl = "\\Images\\fruitCandy.jpg",
+                            IsInStock = true,
+                            IsOnSale = true,
+                            Name = "Pink Gummy Candy",
+                            Price = 4.95m
+                        },
+                        new
+                        {
+                            CandyId = 9,
                             CategoryId = 1,
+                            Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\n            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\n            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\n            optio, eaque rerum!Provident similique accusantium nemo autem.",
+                            ImageThumbnailUrl = "\\Images\\thumbnails\\fruitCandy2-small.jpg",
+                            ImageUrl = "\\Images\\fruitCandy2.jpg",
+                            IsInStock = false,
+                            IsOnSale = false,
+                            Name = "Fun Berry Candy",
+                            Price = 2.50m
+                        },
+                        new
+                        {
+                            CandyId = 10,
+                            CategoryId = 2,
                             Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\n            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\n            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\n            optio, eaque rerum!Provident similique accusantium nemo autem.",
                             ImageThumbnailUrl = "\\Images\\thumbnails\\fruitCandy3-small.jpg",
                             ImageUrl = "\\Images\\fruitCandy3.jpg",
                             IsInStock = false,
                             IsOnSale = true,
-                            Name = "Fun Chocolate Candy",
-                            Price = 4.95m
+                            Name = "Fruit Chocolate Candy",
+                            Price = 5.95m
                         },
                         new
                         {
                             CandyId = 11,
-                            CategoryId = 2,
+                            CategoryId = 1,
                             Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\n            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\n            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\n            optio, eaque rerum!Provident similique accusantium nemo autem.",
                             ImageThumbnailUrl = "\\Images\\thumbnails\\gummyCandy-small.jpg",
                             ImageUrl = "\\Images\\gummyCandy.jpg",
                             IsInStock = false,
-                            IsOnSale = true,
-                            Name = "Assorted Gummy Candy",
-                            Price = 2.95m
+                            IsOnSale = false,
+                            Name = "Fun Ghost Candy",
+                            Price = 5.95m
                         },
                         new
                         {
                             CandyId = 12,
-                            CategoryId = 4,
+                            CategoryId = 2,
                             Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\n            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\n            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\n            optio, eaque rerum!Provident similique accusantium nemo autem.",
                             ImageThumbnailUrl = "\\Images\\thumbnails\\gummyCandy2-small.jpg",
                             ImageUrl = "\\Images\\gummyCandy2.jpg",
                             IsInStock = false,
                             IsOnSale = true,
-                            Name = "Assorted Cherry Candy",
-                            Price = 2.50m
+                            Name = "Pink Ghost Candy",
+                            Price = 4.95m
                         },
                         new
                         {
@@ -208,46 +210,46 @@ namespace CandyShop.Migrations
                             Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\n            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\n            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\n            optio, eaque rerum!Provident similique accusantium nemo autem.",
                             ImageThumbnailUrl = "\\Images\\thumbnails\\gummyCandy3-small.jpg",
                             ImageUrl = "\\Images\\gummyCandy3.jpg",
-                            IsInStock = true,
-                            IsOnSale = true,
-                            Name = "Fruit Gummy Candy",
-                            Price = 3.95m
+                            IsInStock = false,
+                            IsOnSale = false,
+                            Name = "Assorted Strawberry Candy",
+                            Price = 3.50m
                         },
                         new
                         {
                             CandyId = 14,
-                            CategoryId = 2,
+                            CategoryId = 3,
                             Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\n            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\n            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\n            optio, eaque rerum!Provident similique accusantium nemo autem.",
                             ImageThumbnailUrl = "\\Images\\thumbnails\\hardCandy-small.jpg",
                             ImageUrl = "\\Images\\hardCandy.jpg",
                             IsInStock = false,
                             IsOnSale = true,
-                            Name = "Pink Cherry Candy",
-                            Price = 3.95m
+                            Name = "Delicious Cherry Candy",
+                            Price = 4.95m
                         },
                         new
                         {
                             CandyId = 15,
-                            CategoryId = 2,
+                            CategoryId = 1,
                             Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\n            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\n            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\n            optio, eaque rerum!Provident similique accusantium nemo autem.",
                             ImageThumbnailUrl = "\\Images\\thumbnails\\hardCandy2-small.jpg",
                             ImageUrl = "\\Images\\hardCandy2.jpg",
-                            IsInStock = false,
-                            IsOnSale = true,
-                            Name = "Fruit Strawberry Candy",
-                            Price = 5.95m
+                            IsInStock = true,
+                            IsOnSale = false,
+                            Name = "Pink Strawberry Candy",
+                            Price = 3.50m
                         },
                         new
                         {
                             CandyId = 16,
-                            CategoryId = 1,
+                            CategoryId = 4,
                             Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\n            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\n            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\n            optio, eaque rerum!Provident similique accusantium nemo autem.",
                             ImageThumbnailUrl = "\\Images\\thumbnails\\hardCandy3-small.jpg",
                             ImageUrl = "\\Images\\hardCandy3.jpg",
-                            IsInStock = true,
+                            IsInStock = false,
                             IsOnSale = true,
-                            Name = "Assorted Strawberry Candy",
-                            Price = 5.95m
+                            Name = "Fun Chocolate Candy",
+                            Price = 2.95m
                         });
                 });
 
@@ -322,6 +324,9 @@ namespace CandyShop.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<int>("OrderDetailsId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("OrderPlaced")
                         .HasColumnType("datetime2");
 
@@ -372,7 +377,7 @@ namespace CandyShop.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("OrderDetails");
+                    b.ToTable("orderDetails");
                 });
 
             modelBuilder.Entity("CandyShop.Models.ShoppingCartItem", b =>
@@ -396,202 +401,6 @@ namespace CandyShop.Migrations
                     b.HasIndex("CandyId");
 
                     b.ToTable("ShoppingCartItems");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedName")
-                        .IsUnique()
-                        .HasDatabaseName("RoleNameIndex")
-                        .HasFilter("[NormalizedName] IS NOT NULL");
-
-                    b.ToTable("AspNetRoles");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ClaimType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ClaimValue")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RoleId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("AspNetRoleClaims");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ClaimType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ClaimValue")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("AspNetUserClaims");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
-                {
-                    b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ProviderDisplayName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("LoginProvider", "ProviderKey");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("AspNetUserLogins");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
-                {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("RoleId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("UserId", "RoleId");
-
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("AspNetUserRoles");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
-                {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Value")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("UserId", "LoginProvider", "Name");
-
-                    b.ToTable("AspNetUserTokens");
                 });
 
             modelBuilder.Entity("CandyShop.Models.Candy", b =>
@@ -631,57 +440,6 @@ namespace CandyShop.Migrations
                         .HasForeignKey("CandyId");
 
                     b.Navigation("Candy");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
-                        .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
-                        .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("CandyShop.Models.Category", b =>
