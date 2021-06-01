@@ -40,11 +40,11 @@ namespace CandyShop
 
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            // Adds functionality to allow us to work with identity in our application
+            // Of method IdentityUser, Allows for authentication (?)
             services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
 
-
             services.AddControllersWithViews();
-
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ICandyRepository, CandyRepository>();
             services.AddScoped<ShoppingCart>(sc => ShoppingCart.GetCart(sc));
@@ -53,7 +53,15 @@ namespace CandyShop
 
             services.AddHttpContextAccessor();
             services.AddSession();
+
             services.AddRazorPages();
+
+
+           // services.AddMvc().AddRazorPagesOptions(options =>
+           //{
+           //    options.Conventions.AddPageRoute("/Home/Index", "");
+           //});
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,10 +74,8 @@ namespace CandyShop
 
             /***Middleware Setup****/
 
-            //NOTE: Tells AppBuilder to use HTTPS redirection.
             app.UseHttpsRedirection();
 
-            //NOTE: Tells AppBuilder to allow use of static files such as Images, CSS, JS, etc...
             app.UseStaticFiles();
 
             // **Call UseSession before routing.
@@ -80,6 +86,7 @@ namespace CandyShop
 
             // Important: Add after Routing
             app.UseAuthentication();
+            app.UseAuthorization();
 
             //NOTE: Lets MVC respond to requests
             // Controller route is introduced to url here,

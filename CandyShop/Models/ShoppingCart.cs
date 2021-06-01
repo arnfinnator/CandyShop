@@ -77,7 +77,7 @@ namespace CandyShop.Models
             {
                 if (shoppingCartItem.Amount > 1)
                 {
-                    shoppingCartItem.Amount++;
+                    shoppingCartItem.Amount--;
                     localAmount = shoppingCartItem.Amount;
                 }
                 else
